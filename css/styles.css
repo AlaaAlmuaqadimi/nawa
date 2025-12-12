@@ -1,0 +1,184 @@
+ 
+@import url('https://fonts.googleapis.com/css2?family=Readex+Pro:wght@160..700&display=swap');
+ 
+:root{
+  --font: "Readex Pro", system-ui, -apple-system, "Segoe UI", Tahoma, Arial, sans-serif;
+  --bg:#f6f8fb;
+  --card:#ffffff;
+  --text:#111827;
+  --muted:#6b7280;
+  --brand:#0ea5a4;
+  --brand2:#2563eb;
+  --stroke:rgba(17,24,39,.10);
+  --shadow:0 14px 35px rgba(17,24,39,.10);
+  --shadow2:0 10px 20px rgba(17,24,39,.08);
+  --radius:18px;
+  --max:1100px;
+  --ease:cubic-bezier(.2,.8,.2,1);
+  --speed:220ms;
+  --header-h:72px;
+  --hero-height:calc(100svh - var(--header-h));
+  --hero-gap:32px;
+  --hero-title:44px;
+  --hero-title-mobile:34px;
+}
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;
+  font-family:var(--font);
+  background:var(--bg);
+  color:var(--text);
+  line-height:1.8;
+}
+
+a{color:inherit;text-decoration:none}
+.wrap{max-width:var(--max);margin:auto;padding:20px}
+
+.bgFX{position:fixed;inset:0;z-index:-1;overflow:hidden;pointer-events:none}
+.blob{position:absolute;width:520px;height:520px;border-radius:999px;filter:blur(40px);opacity:.18;animation:floaty 12s var(--ease) infinite alternate}
+.blob.b1{right:-140px;top:-160px;background:var(--brand2);animation-duration:14s}
+.blob.b2{left:-180px;top:120px;background:var(--brand);animation-duration:16s}
+.blob.b3{right:120px;bottom:-220px;background:#f59e0b;animation-duration:18s;opacity:.12}
+@keyframes floaty{from{transform:translate3d(0,0,0) scale(1)}to{transform:translate3d(-30px,25px,0) scale(1.06)}}
+
+header{
+  position:sticky;top:0;z-index:50;
+  backdrop-filter:blur(10px);
+  background:rgba(246,248,251,.72);
+  border-bottom:1px solid var(--stroke);
+}
+.nav{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:12px 0}
+.brand{display:flex;align-items:center;gap:12px}
+.brand img{width:46px;height:46px;object-fit:contain;filter:drop-shadow(0 10px 18px rgba(17,24,39,.10))}
+.brand b{display:block;font-size:16px}
+.brand small{display:block;color:var(--muted);font-size:12px;margin-top:-2px}
+.links{display:flex;gap:14px;flex-wrap:wrap;justify-content:flex-start}
+.links a{
+  padding:8px 12px;border:1px solid transparent;border-radius:999px;
+  color:var(--muted);font-size:14px;
+  transition:all var(--speed) var(--ease);
+}
+.links a:hover{border-color:var(--stroke);color:var(--text);background:rgba(17,24,39,.03)}
+.cta{display:flex;gap:10px;align-items:center;flex-wrap:wrap;justify-content:flex-end}
+
+.btn{
+  padding:10px 14px;border-radius:999px;border:1px solid var(--stroke);
+  background:rgba(17,24,39,.03);
+  color:var(--text);font-weight:600;font-size:14px;
+  transition:transform var(--speed) var(--ease),box-shadow var(--speed) var(--ease),background var(--speed) var(--ease);
+}
+.btn.primary{border:none;background:linear-gradient(135deg,var(--brand),var(--brand2));color:#06121a}
+.btn:hover{transform:translateY(-2px);box-shadow:var(--shadow2)}
+
+.card{
+  background:var(--card);
+  border:1px solid var(--stroke);
+  border-radius:var(--radius);
+  box-shadow:var(--shadow);
+}
+
+.kicker{
+  display:inline-flex;gap:8px;align-items:center;
+  padding:6px 10px;border-radius:999px;
+  background:rgba(14,165,164,.10);
+  border:1px solid rgba(14,165,164,.20);
+  color:#0f766e;
+  font-size:13px;
+}
+
+h1{margin:0;font-size:var(--hero-title);line-height:1.18;letter-spacing:-.02em}
+p{margin:0 0 12px}
+.muted{color:var(--muted)}
+
+section{padding:22px 0}
+
+.sectionTitle{display:flex;align-items:end;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-bottom:14px}
+.sectionTitle h2{margin:0;font-size:22px}
+.badge{display:inline-block;padding:4px 10px;border-radius:999px;border:1px solid var(--stroke);color:var(--muted);font-size:12px}
+
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.feature{
+  padding:18px;border-radius:16px;border:1px solid var(--stroke);
+  background:rgba(17,24,39,.02);
+  transition:transform var(--speed) var(--ease),box-shadow var(--speed) var(--ease);
+}
+.feature:hover{transform:translateY(-3px);box-shadow:var(--shadow2)}
+
+.pillRow{display:flex;gap:10px;flex-wrap:wrap;margin-top:10px}
+.pill{border:1px solid var(--stroke);background:rgba(17,24,39,.03);padding:8px 10px;border-radius:999px;font-size:13px;color:var(--muted)}
+
+.footer{padding:18px 0 30px;border-top:1px solid var(--stroke);color:var(--muted);font-size:13px}
+.contact{display:grid;grid-template-columns:1fr;gap:14px}
+
+.reveal{opacity:0;transform:translateY(10px);transition:opacity 600ms var(--ease),transform 600ms var(--ease)}
+.reveal.show{opacity:1;transform:translateY(0)}
+
+.homeHero{
+  min-height:var(--hero-height);
+  display:grid;
+  grid-template-columns:1.1fr .9fr;
+  gap:var(--hero-gap);
+  align-items:center;
+  padding:18px 0;
+}
+.heroTextWrap{
+  padding:34px 8px;
+  max-width:640px;
+}
+.heroTop p{max-width:560px;margin-top:14px;font-size:16px}
+
+.heroBadges{
+  margin-top:20px;
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:12px;
+}
+.heroBadge{
+  display:flex;
+  gap:10px;
+  padding:12px 12px;
+  border-radius:14px;
+  border:1px solid var(--stroke);
+  background:rgba(17,24,39,.02);
+  transition:transform var(--speed) var(--ease),box-shadow var(--speed) var(--ease);
+}
+.heroBadge:hover{transform:translateY(-2px);box-shadow:var(--shadow2)}
+.heroBadgeIcon{
+  width:38px;height:38px;display:grid;place-items:center;
+  border-radius:12px;
+  background:linear-gradient(135deg,rgba(14,165,164,.14),rgba(37,99,235,.14));
+  border:1px solid rgba(17,24,39,.06);
+  font-size:18px;
+}
+.heroBadgeText b{display:block;font-size:14px;line-height:1.2}
+.heroBadgeText span{display:block;font-size:12px;line-height:1.2;margin-top:3px}
+
+.heroActions{margin-top:22px;display:flex;gap:12px;flex-wrap:wrap}
+
+.homeImageWrap{position:relative}
+.homeImage{
+  width:100%;
+  height:min(560px,calc(var(--hero-height) - 40px));
+  max-height:720px;
+  object-fit:contain;
+  display:block;
+  border-radius:0;
+  animation:imgFloat 9s var(--ease) infinite alternate;
+  filter:saturate(1.02) contrast(1.02);
+}
+@keyframes imgFloat{from{transform:translate3d(0,0,0) scale(1)}to{transform:translate3d(-10px,10px,0) scale(1.02)}}
+
+@media (prefers-reduced-motion: reduce){
+  *{animation:none !important;transition:none !important}
+}
+
+@media (max-width: 980px){
+  h1{font-size:var(--hero-title-mobile)}
+  .homeHero{grid-template-columns:1fr;min-height:auto}
+  .heroTextWrap{padding:22px 0;max-width:100%}
+  .heroBadges{grid-template-columns:1fr}
+  .homeImage{height:320px;max-height:none}
+  .grid3{grid-template-columns:1fr}
+}
