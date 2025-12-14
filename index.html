@@ -40,7 +40,7 @@
   --radius:18px;
   --max:1120px;
 }
-
+  
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
 
@@ -68,16 +68,20 @@ a{color:inherit; text-decoration:none}
   position:sticky;
   top:0;
   z-index:50;
+  padding: 0 15px;
   backdrop-filter:blur(12px);
   background:rgba(255,255,255,.78);
   border-bottom:1px solid var(--border);
 }
+
 .nav-inner{
   display:flex;
   align-items:center;
   justify-content:space-between;
   padding:12px 0;
+  position:relative;
 }
+
 .brand{
   display:flex;
   align-items:center;
@@ -89,19 +93,15 @@ a{color:inherit; text-decoration:none}
   width:56px;
   height:56px;
   border-radius:16px;
-
-  /* خلفية متناسقة مع لون اللوقو */
   background: linear-gradient(
     135deg,
     rgba(213,184,134,.22) 0%,
     rgba(243,234,219,.75) 55%,
     rgba(184,138,75,.18) 100%
   );
-
   display:flex;
   align-items:center;
   justify-content:center;
-
   border:1px solid rgba(18,24,38,.12);
   box-shadow: 0 8px 24px rgba(18,24,38,.10);
   overflow:hidden;
@@ -113,7 +113,10 @@ a{color:inherit; text-decoration:none}
   display:block;
 }
 
-.menu{display:flex; gap:12px}
+.menu{
+  display:flex;
+  gap:12px;
+}
 .menu a{
   padding:8px 10px;
   border-radius:12px;
@@ -125,28 +128,96 @@ a{color:inherit; text-decoration:none}
   background:rgba(213,184,134,.12);
 }
 
-/* BUTTONS */
-.btn{
-  display:inline-flex;
+/* Mobile buttons */
+.nav-actions{
+  display:none;
   align-items:center;
-  justify-content:center;
-  padding:12px 18px;
+  gap:10px;
+}
+
+.icon-btn{
+  width:46px;
+  height:46px;
   border-radius:14px;
   border:1px solid var(--border);
-  background:rgba(255,255,255,.65);
-  color:var(--text);
-  font-weight:800;
+  background:rgba(255,255,255,.72);
+  display:grid;
+  place-items:center;
+  box-shadow:0 8px 24px rgba(18,24,38,.10);
   transition:.2s;
+  cursor:pointer;
+  -webkit-tap-highlight-color: transparent;
 }
-.btn:hover{
+
+.icon-btn:hover{
   transform:translateY(-2px);
   box-shadow:var(--shadow);
 }
-.btn.primary{
-  background:linear-gradient(135deg,var(--brand),var(--brand2));
-  color:#fff;
-  border:none;
+
+.icon-btn svg{
+  width:22px;
+  height:22px;
+  fill:none;
+  stroke:var(--brand3);
+  stroke-width:2.2;
+  stroke-linecap:round;
+  stroke-linejoin:round;
 }
+
+/* Mobile layout */
+@media (max-width: 900px){
+  .menu{
+    position:absolute;
+    top:100%;
+    right:0;
+    left:0;
+    flex-direction:column;
+    gap:0;
+    background:rgba(255,255,255,.92);
+    backdrop-filter: blur(12px);
+    border:1px solid var(--border);
+    border-top:none;
+    border-radius:0 0 18px 18px;
+    overflow:hidden;
+    max-height:0;
+    opacity:0;
+    transform:translateY(-6px);
+    transition:max-height .35s ease, opacity .25s ease, transform .25s ease;
+  }
+
+  .menu a{
+    padding:14px 16px;
+    border-radius:0;
+    border-bottom:1px solid rgba(18,24,38,.08);
+  }
+  .menu a:last-child{ border-bottom:none; }
+
+  .menu.is-open{
+    max-height:420px;
+    opacity:1;
+    transform:translateY(0);
+  }
+
+  .nav-actions{ display:flex; }
+
+  .brand{
+    position:absolute;
+    left:50%;
+    transform:translateX(-50%);
+    text-align:center;
+  }
+  .brand-text{
+    display:none;
+  }
+
+  .brand > div{ line-height:1.2; }
+}
+
+@media (prefers-reduced-motion: reduce){
+  .menu{ transition:none !important; }
+  .icon-btn{ transition:none !important; }
+} 
+
 
 /* ===================== */
 /* HERO (داكن + لمسة ذهبية) */
@@ -359,29 +430,56 @@ iframe{
   <div class="bg-orb orb1"></div>
   <div class="bg-orb orb2"></div>
 
-  <!-- NAV -->
-  <header class="nav">
-    <div class="wrap nav-inner">
-      <a class="brand" href="#top" aria-label="الرئيسية">
-        <div class="logo">
-          <img src="photo/logoo-removebg-preview.png" alt="شعار شركة النواة الجديدة">
-        </div>
+ <!-- NAV -->
+<header class="nav">
+  <div class=" nav-inner">
 
-        <div>
-          شركة <span style="color:var(--brand)">النواة الجديدة</span><br/>
-          <span style="color:var(--muted); font-size:13px">استيراد وتوريد مواد غذائية</span>
-        </div>
+    <!-- (موبايل) زر اتصال -->
+    <div class="nav-actions">
+      <a class="icon-btn" href="tel:+218913688853" aria-label="اتصال مباشر">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.3 1.7.6 2.5a2 2 0 0 1-.4 2.1L8.2 9.8a16 16 0 0 0 6 6l1.5-1.1a2 2 0 0 1 2.1-.4c.8.3 1.6.5 2.5.6A2 2 0 0 1 22 16.9z"/>
+        </svg>
       </a>
-
-      <nav class="menu" aria-label="القائمة">
-        <a href="#services">الخدمات</a>
-        <a href="#inventory">مواد غذائية / مخزون</a>
-        <a href="#about">من نحن</a>
-        <a href="#whyus">لماذا نحن</a>
-        <a href="#contact">تواصل معنا</a>
-      </nav>
     </div>
-  </header>
+
+    <!-- Brand -->
+    <a class="brand" href="#top" aria-label="الرئيسية">
+      <div class="logo">
+        <img src="photo/logoo-removebg-preview.png" alt="شعار شركة النواة الجديدة">
+      </div>
+      <div class="brand-text">
+        شركة <span style="color:var(--brand)">النواة الجديدة</span><br/>
+        <span style="color:var(--muted); font-size:13px">استيراد وتوريد مواد غذائية</span>
+      </div>
+    </a>
+
+    <!-- Menu -->
+    <nav class="menu" id="mainMenu" aria-label="القائمة">
+      <a href="#services">الخدمات</a>
+      <a href="#inventory">مواد غذائية / مخزون</a>
+      <a href="#about">من نحن</a>
+      <a href="#whyus">لماذا نحن</a>
+      <a href="#contact">تواصل معنا</a>
+    </nav>
+
+    <!-- (موبايل) زر فتح القائمة -->
+    <div class="nav-actions">
+      <button
+        class="icon-btn"
+        id="menuToggle"
+        type="button"
+        aria-label="فتح القائمة"
+        aria-expanded="false"
+        aria-controls="mainMenu">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M4 6h16M4 12h16M4 18h16"/>
+        </svg>
+      </button>
+    </div>
+
+  </div>
+</header>
 
  <!-- HERO -->
 <main id="top" class="hero">
@@ -576,107 +674,139 @@ iframe{
 
 <!-- AOS -->
 <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
-
 <script>
-  document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('DOMContentLoaded', () => {
 
-    /* =========================
-       1) HERO SLIDER
-    ========================== */
-    (function heroSlider(){
-      const slides = document.querySelectorAll('.slide');
-      if (!slides.length) return;
+  /* =========================
+     A) MOBILE NAV MENU
+  ========================== */
+  const btn  = document.getElementById('menuToggle');
+  const menu = document.getElementById('mainMenu');
 
-      let idx = 0;
-      const interval = 4500;
+  if (btn && menu) {
+    const closeMenu = () => {
+      menu.classList.remove('is-open');
+      btn.setAttribute('aria-expanded', 'false');
+    };
 
-      setInterval(() => {
-        slides[idx].classList.remove('active');
-        idx = (idx + 1) % slides.length;
-        slides[idx].classList.add('active');
-      }, interval);
-    })();
+    const toggleMenu = () => {
+      const open = menu.classList.toggle('is-open');
+      btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+    };
 
-
-    /* =========================
-       2) SECTION ANIMATIONS (Auto)
-    ========================== */
-    const sectionAnims = [
-      { section: 'fade-up',    item: 'zoom-in' },
-      { section: 'fade-right', item: 'fade-up' },
-      { section: 'fade-left',  item: 'fade-up' },
-      { section: 'flip-up',    item: 'zoom-in' },
-      { section: 'fade-down',  item: 'fade-up' },
-      { section: 'zoom-in',    item: 'flip-left' }
-    ];
-
-    const sections = Array.from(document.querySelectorAll('main.hero, section'));
-
-    const itemSelectors = [
-      '.card',
-      '.thumb',
-      '.icon',
-      '.section-title',
-      '.field',
-      'h2','h3','p'
-    ].join(',');
-
-    sections.forEach((sec, i) => {
-      const conf = sectionAnims[i % sectionAnims.length];
-
-      // أنيميشن للسكشن نفسه
-      sec.dataset.aos = conf.section;
-      sec.dataset.aosDuration = '850';
-      sec.dataset.aosOffset = '120';
-      sec.dataset.aosOnce = 'true';
-
-      // أنيميشن للعناصر داخل السكشن (Stagger)
-      const items = Array.from(sec.querySelectorAll(itemSelectors))
-        .filter(el =>
-          !el.classList.contains('slides') &&
-          !el.classList.contains('slide') &&
-          !el.classList.contains('overlay')
-        );
-
-      items.forEach((el, j) => {
-        if (!el.dataset.aos) el.dataset.aos = conf.item;
-        el.dataset.aosDelay = String(Math.min(j * 70, 600));
-        el.dataset.aosDuration = '700';
-        el.dataset.aosOnce = 'true';
-      });
+    btn.addEventListener('click', (e) => {
+      e.stopPropagation();  // مهم: حتى ما يعتبره "ضغط خارج" ويقفل مباشرة
+      toggleMenu();
     });
 
-
-    /* =========================
-       3) SMOOTH SCROLL
-    ========================== */
-    document.querySelectorAll('a[href^="#"]').forEach(a => {
-      a.addEventListener('click', (e) => {
-        const id = a.getAttribute('href');
-        if (!id || id === '#') return;
-
-        const target = document.querySelector(id);
-        if (!target) return;
-
-        e.preventDefault();
-        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      });
+    // يقفل المنيو لما تضغط على أي رابط
+    menu.querySelectorAll('a[href^="#"]').forEach(a => {
+      a.addEventListener('click', closeMenu);
     });
 
-
-    /* =========================
-       4) AOS INIT (Once)
-    ========================== */
-    AOS.init({
-      once: true,
-      duration: 800,
-      easing: 'ease-out-cubic',
-      offset: 120
+    // يقفل المنيو لو المستخدم ضغط خارجها
+    document.addEventListener('click', (e) => {
+      const clickedInside = menu.contains(e.target) || btn.contains(e.target);
+      if (!clickedInside) closeMenu();
     });
 
-    // إذا كان في صور/عناصر تتأخر بالتحميل
-    AOS.refreshHard();
+    // يقفلها عند تغيير حجم الشاشة للديسكتوب
+    window.addEventListener('resize', () => {
+      if (window.innerWidth > 900) closeMenu();
+    });
+  }
+
+  /* =========================
+     1) HERO SLIDER
+  ========================== */
+  (function heroSlider(){
+    const slides = document.querySelectorAll('.slide');
+    if (!slides.length) return;
+
+    let idx = 0;
+    const interval = 4500;
+
+    setInterval(() => {
+      slides[idx].classList.remove('active');
+      idx = (idx + 1) % slides.length;
+      slides[idx].classList.add('active');
+    }, interval);
+  })();
+
+  /* =========================
+     2) SECTION ANIMATIONS (Auto)
+  ========================== */
+  const sectionAnims = [
+    { section: 'fade-up',    item: 'zoom-in' },
+    { section: 'fade-right', item: 'fade-up' },
+    { section: 'fade-left',  item: 'fade-up' },
+    { section: 'flip-up',    item: 'zoom-in' },
+    { section: 'fade-down',  item: 'fade-up' },
+    { section: 'zoom-in',    item: 'flip-left' }
+  ];
+
+  const sections = Array.from(document.querySelectorAll('main.hero, section'));
+
+  const itemSelectors = [
+    '.card',
+    '.thumb',
+    '.icon',
+    '.section-title',
+    '.field',
+    'h2','h3','p'
+  ].join(',');
+
+  sections.forEach((sec, i) => {
+    const conf = sectionAnims[i % sectionAnims.length];
+
+    sec.dataset.aos = conf.section;
+    sec.dataset.aosDuration = '850';
+    sec.dataset.aosOffset = '120';
+    sec.dataset.aosOnce = 'true';
+
+    const items = Array.from(sec.querySelectorAll(itemSelectors))
+      .filter(el =>
+        !el.classList.contains('slides') &&
+        !el.classList.contains('slide') &&
+        !el.classList.contains('overlay')
+      );
+
+    items.forEach((el, j) => {
+      if (!el.dataset.aos) el.dataset.aos = conf.item;
+      el.dataset.aosDelay = String(Math.min(j * 70, 600));
+      el.dataset.aosDuration = '700';
+      el.dataset.aosOnce = 'true';
+    });
   });
+
+  /* =========================
+     3) SMOOTH SCROLL
+  ========================== */
+  document.querySelectorAll('a[href^="#"]').forEach(a => {
+    a.addEventListener('click', (e) => {
+      const id = a.getAttribute('href');
+      if (!id || id === '#') return;
+
+      const target = document.querySelector(id);
+      if (!target) return;
+
+      e.preventDefault();
+      target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    });
+  });
+
+  /* =========================
+     4) AOS INIT (Once)
+  ========================== */
+  AOS.init({
+    once: true,
+    duration: 800,
+    easing: 'ease-out-cubic',
+    offset: 120
+  });
+
+  AOS.refreshHard();
+});
 </script>
 
 
