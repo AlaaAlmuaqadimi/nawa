@@ -5,7 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>شركة النواة الجديدة لاستيراد المواد الغذائية</title>
   <meta name="description" content="استيراد وتوريد مواد غذائية بجودة عالية - مقرنا حي الأندلس." />
-<link rel="shortcut icon" href="photo/logoo-removebg-preview.png" type="image/x-icon">
+  <link rel="shortcut icon" href="photo/logoo-removebg-preview.png" type="image/x-icon">
+  
   <!-- Google Font   -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -15,548 +16,548 @@
   <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
 
   <!-- Main CSS --> 
- <style> 
-:root{
-  /* =======================
-     لوحة ألوان مستوحاة من اللوقو (ذهبي/بيج)
-     ======================= */
-  --brand:#d5b886;        /* اللون الأساسي (تقريباً من اللوقو) */
-  --brand2:#b88a4b;       /* درجة أغمق للجراديانت */
-  --brand3:#8b6a3b;       /* أغمق (للنصوص/التأكيد) */
-  --brand-soft:#f3eadb;   /* فاتح جداً للخلفيات */
+  <style> 
+  :root{
+    /* =======================
+      لوحة ألوان مستوحاة من اللوقو (ذهبي/بيج)
+      ======================= */
+    --brand:#d5b886;        /* اللون الأساسي (تقريباً من اللوقو) */
+    --brand2:#b88a4b;       /* درجة أغمق للجراديانت */
+    --brand3:#8b6a3b;       /* أغمق (للنصوص/التأكيد) */
+    --brand-soft:#f3eadb;   /* فاتح جداً للخلفيات */
 
-  /* الخلفيات */
-  --bg:#fbf8f2;                    /* خلفية دافئة فاتحة */
-  --card:rgba(255,255,255,.94);    /* الكروت */
+    /* الخلفيات */
+    --bg:#fbf8f2;                    /* خلفية دافئة فاتحة */
+    --card:rgba(255,255,255,.94);    /* الكروت */
 
-  /* النصوص */
-  --text:#121826;
-  --muted:#5b6472;
+    /* النصوص */
+    --text:#121826;
+    --muted:#5b6472;
 
-  /* الحدود والظلال */
-  --border:rgba(18,24,38,.12);
-  --shadow:0 18px 45px rgba(18,24,38,.14);
+    /* الحدود والظلال */
+    --border:rgba(18,24,38,.12);
+    --shadow:0 18px 45px rgba(18,24,38,.14);
 
-  --radius:18px;
-  --max:1120px;
-}
-  
-*{box-sizing:border-box}
-html{scroll-behavior:smooth}
+    --radius:18px;
+    --max:1120px;
+  }
+    
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
 
-body{
-  margin:0;
-  font-family:"Cairo", system-ui, -apple-system, "Segoe UI", Tahoma, Arial, sans-serif;
+  body{
+    margin:0;
+    font-family:"Cairo", system-ui, -apple-system, "Segoe UI", Tahoma, Arial, sans-serif;
 
-  /* تدرجات مناسبة للون اللوقو */
-  background:
-    radial-gradient(900px 500px at 85% 10%, rgba(213,184,134,.22), transparent 60%),
-    radial-gradient(900px 500px at 15% 30%, rgba(184,138,75,.16), transparent 60%),
-    linear-gradient(180deg, rgba(243,234,219,.55), transparent 35%),
-    var(--bg);
+    /* تدرجات مناسبة للون اللوقو */
+    background:
+      radial-gradient(900px 500px at 85% 10%, rgba(213,184,134,.22), transparent 60%),
+      radial-gradient(900px 500px at 15% 30%, rgba(184,138,75,.16), transparent 60%),
+      linear-gradient(180deg, rgba(243,234,219,.55), transparent 35%),
+      var(--bg);
 
-  color:var(--text);
-  line-height:1.85;
-  overflow-x:hidden;
-}
-
-a{color:inherit; text-decoration:none}
-.wrap{max-width:var(--max); margin:auto; padding:0 18px}
-
-/* NAVBAR */
-.nav{
-  position:sticky;
-  top:0;
-  z-index:50;
-  padding: 0 15px;
-  backdrop-filter:blur(12px);
-  background:rgba(255,255,255,.78);
-  border-bottom:1px solid var(--border);
-}
-
-.nav-inner{
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  padding:12px 0;
-  position:relative;
-}
-
-.brand{
-  display:flex;
-  align-items:center;
-  gap:10px;
-  font-weight:800;
-}
-
-.logo{
-  width:56px;
-  height:56px;
-  border-radius:16px;
-  background: linear-gradient(
-    135deg,
-    rgba(213,184,134,.22) 0%,
-    rgba(243,234,219,.75) 55%,
-    rgba(184,138,75,.18) 100%
-  );
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  border:1px solid rgba(18,24,38,.12);
-  box-shadow: 0 8px 24px rgba(18,24,38,.10);
-  overflow:hidden;
-}
-.logo img{
-  width:75%;
-  height:75%;
-  object-fit:contain;
-  display:block;
-}
-
-.menu{
-  display:flex;
-  gap:12px;
-}
-.menu a{
-  padding:8px 10px;
-  border-radius:12px;
-  color:var(--muted);
-  transition:.2s;
-}
-.menu a:hover{
-  color:var(--text);
-  background:rgba(213,184,134,.12);
-}
-
-/* Mobile buttons */
-.nav-actions{
-  display:none;
-  align-items:center;
-  gap:10px;
-}
-
-.icon-btn{
-  width:46px;
-  height:46px;
-  border-radius:14px;
-  border:1px solid var(--border);
-  background:rgba(255,255,255,.72);
-  display:grid;
-  place-items:center;
-  box-shadow:0 8px 24px rgba(18,24,38,.10);
-  transition:.2s;
-  cursor:pointer;
-  -webkit-tap-highlight-color: transparent;
-}
-
-.icon-btn:hover{
-  transform:translateY(-2px);
-  box-shadow:var(--shadow);
-}
-
-.icon-btn svg{
-  width:22px;
-  height:22px;
-  fill:none;
-  stroke:var(--brand3);
-  stroke-width:2.2;
-  stroke-linecap:round;
-  stroke-linejoin:round;
-}
-
-/* Mobile layout */
-@media (max-width: 900px){
-  .menu{
-    position:absolute;
-    top:100%;
-    right:0;
-    left:0;
-    flex-direction:column;
-    gap:0;
-    background:rgba(255,255,255,.92);
-    backdrop-filter: blur(12px);
-    border:1px solid var(--border);
-    border-top:none;
-    border-radius:0 0 18px 18px;
-    overflow:hidden;
-    max-height:0;
-    opacity:0;
-    transform:translateY(-6px);
-    transition:max-height .35s ease, opacity .25s ease, transform .25s ease;
+    color:var(--text);
+    line-height:1.85;
+    overflow-x:hidden;
   }
 
-  .menu a{
-    padding:14px 16px;
-    border-radius:0;
-    border-bottom:1px solid rgba(18,24,38,.08);
-  }
-  .menu a:last-child{ border-bottom:none; }
+  a{color:inherit; text-decoration:none}
+  .wrap{max-width:var(--max); margin:auto; padding:0 18px}
 
-  .menu.is-open{
-    max-height:420px;
-    opacity:1;
-    transform:translateY(0);
+  /* NAVBAR */
+  .nav{
+    position:sticky;
+    top:0;
+    z-index:50;
+    padding: 0 15px;
+    backdrop-filter:blur(12px);
+    background:rgba(255,255,255,.78);
+    border-bottom:1px solid var(--border);
   }
 
-  .nav-actions{ display:flex; }
+  .nav-inner{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:12px 0;
+    position:relative;
+  }
 
   .brand{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    font-weight:800;
+  }
+
+  .logo{
+    width:56px;
+    height:56px;
+    border-radius:16px;
+    background: linear-gradient(
+      135deg,
+      rgba(213,184,134,.22) 0%,
+      rgba(243,234,219,.75) 55%,
+      rgba(184,138,75,.18) 100%
+    );
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    border:1px solid rgba(18,24,38,.12);
+    box-shadow: 0 8px 24px rgba(18,24,38,.10);
+    overflow:hidden;
+  }
+  .logo img{
+    width:75%;
+    height:75%;
+    object-fit:contain;
+    display:block;
+  }
+
+  .menu{
+    display:flex;
+    gap:12px;
+  }
+  .menu a{
+    padding:8px 10px;
+    border-radius:12px;
+    color:var(--muted);
+    transition:.2s;
+  }
+  .menu a:hover{
+    color:var(--text);
+    background:rgba(213,184,134,.12);
+  }
+
+  /* Mobile buttons */
+  .nav-actions{
+    display:none;
+    align-items:center;
+    gap:10px;
+  }
+
+  .icon-btn{
+    width:46px;
+    height:46px;
+    border-radius:14px;
+    border:1px solid var(--border);
+    background:rgba(255,255,255,.72);
+    display:grid;
+    place-items:center;
+    box-shadow:0 8px 24px rgba(18,24,38,.10);
+    transition:.2s;
+    cursor:pointer;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  .icon-btn:hover{
+    transform:translateY(-2px);
+    box-shadow:var(--shadow);
+  }
+
+  .icon-btn svg{
+    width:22px;
+    height:22px;
+    fill:none;
+    stroke:var(--brand3);
+    stroke-width:2.2;
+    stroke-linecap:round;
+    stroke-linejoin:round;
+  }
+
+  /* Mobile layout */
+  @media (max-width: 900px){
+    .menu{
+      position:absolute;
+      top:100%;
+      right:0;
+      left:0;
+      flex-direction:column;
+      gap:0;
+      background:rgba(255,255,255,.92);
+      backdrop-filter: blur(12px);
+      border:1px solid var(--border);
+      border-top:none;
+      border-radius:0 0 18px 18px;
+      overflow:hidden;
+      max-height:0;
+      opacity:0;
+      transform:translateY(-6px);
+      transition:max-height .35s ease, opacity .25s ease, transform .25s ease;
+    }
+
+    .menu a{
+      padding:14px 16px;
+      border-radius:0;
+      border-bottom:1px solid rgba(18,24,38,.08);
+    }
+    .menu a:last-child{ border-bottom:none; }
+
+    .menu.is-open{
+      max-height:420px;
+      opacity:1;
+      transform:translateY(0);
+    }
+
+    .nav-actions{ display:flex; }
+
+    .brand{
+      position:absolute;
+      left:50%;
+      transform:translateX(-50%);
+      text-align:center;
+    }
+    .brand-text{
+      display:none;
+    }
+
+    .brand > div{ line-height:1.2; }
+  }
+
+  @media (prefers-reduced-motion: reduce){
+    .menu{ transition:none !important; }
+    .icon-btn{ transition:none !important; }
+  } 
+
+
+  /* ===================== */
+  /* HERO (داكن + لمسة ذهبية) */
+  /* ===================== */
+  .hero{
+    width:100vw;
+    min-height:100vh;
+  }
+  .hero-slider{
+    position:relative;
+    width:100%;
+    height:100vh;
+    overflow:hidden;
+    padding:0 !important;
+    border:0;
+
+    /* بديل جميل لو ما في صور */
+    background:
+      radial-gradient(900px 600px at 70% 10%, rgba(213,184,134,.18), transparent 55%),
+      radial-gradient(900px 600px at 20% 70%, rgba(184,138,75,.14), transparent 55%),
+      #070c16;
+  }
+  .slides,.slide,.overlay{
     position:absolute;
-    left:50%;
-    transform:translateX(-50%);
+    inset:0;
+    width:100%;
+    height:100%;
+  }
+  .slide{
+    background-size:cover;
+    background-position:center;
+    opacity:0;
+    transform:scale(1.06);
+    transition:opacity 1s ease, transform 8s ease;
+  }
+  .slide.active{
+    opacity:1;
+    transform:scale(1);
+  }
+
+  /* Overlay الداكن مع تدرج ذهبي خفيف */
+  .overlay{
+    background: linear-gradient(to left,
+      rgba(7,12,22,.88) 18%,
+      rgba(7,12,22,.60) 55%,
+      rgba(213,184,134,.12) 100%
+    );
+  }
+
+  /* HERO CONTENT */
+  .hero-content{
+    position:relative;
+    height:100%;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    padding:60px 18px;
+    max-width:900px;
+    margin:auto;
+    color:#eef3ff;
+  }
+
+  /* اسم الشركة */
+  .company-name{
+    font-size:44px;
+    font-weight:900;
+    margin:0 0 8px;
+    color:var(--brand);
+    text-shadow:0 10px 30px rgba(0,0,0,.35);
+  }
+  @media (max-width:520px){
+    .company-name{font-size:34px}
+  }
+
+  .badge{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:10px;
+    padding:10px 14px;
+    border-radius:999px;
+    background:rgba(213,184,134,.12);
+    border:1px solid rgba(213,184,134,.22);
+    color:#f3f4f6;
+    font-weight:800;
+    font-size:14px;
+    margin-bottom:10px;
+  }
+
+  .hero-content h1{
+    margin:6px 0 0;
+    font-size:38px;
+    line-height:1.2;
+  }
+  @media (max-width:520px){
+    .hero-content h1{font-size:30px}
+  }
+
+  .lead{
+    color:#dbe3f7;
+    margin:10px 0 14px;
+  }
+  .actions{
+    display:flex;
+    gap:12px;
+    flex-wrap:wrap;
+    justify-content:center;
+  }
+
+  /* ===================== */
+  /* SECTIONS */
+  /* ===================== */
+  section{padding:32px 0}
+  .section-title{
+    display:flex;
+    justify-content:space-between;
+    align-items:flex-end;
+    margin-bottom:16px;
+  }
+  .section-title h2{margin:0}
+  .section-title p{margin:0;color:var(--muted)}
+
+  .grid-3{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:14px;
+  }
+  @media(max-width:900px){
+    .grid-3{grid-template-columns:1fr}
+  }
+
+  /* CARDS */
+  .card{
+    background:var(--card);
+    border:1px solid var(--border);
+    border-radius:var(--radius);
+    padding:22px;
+    box-shadow:var(--shadow);
+  }
+  .lift{transition:.22s}
+  .lift:hover{transform:translateY(-6px)}
+
+  .icon{
+    width:46px;height:46px;
+    border-radius:14px;
+    display:grid;
+    place-items:center;
+    background:rgba(213,184,134,.14);
+    border:1px solid rgba(213,184,134,.22);
+    font-size:22px;
+    margin-bottom:10px;
+  }
+  .small{color:var(--muted)}
+
+  .thumb{
+    height:150px;
+    border-radius:16px;
+    border:1px solid var(--border);
+    margin-bottom:12px;
+    background-size:cover;
+    background-position:center;
+  }
+
+  /* CONTACT */
+  .contact-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:14px;
+  }
+  @media(max-width:900px){
+    .contact-grid{grid-template-columns:1fr}
+  }
+
+  .field{
+    display:flex;
+    justify-content:space-between;
+    padding:12px 14px;
+    border:1px solid var(--border);
+    border-radius:14px;
+    background:rgba(213,184,134,.10);
+    color:var(--muted);
+  }
+  .field strong{color:var(--text)}
+
+  iframe{
+    width:100%;
+    height:320px;
+    border-radius:16px;
+    border:1px solid var(--border);
+  }
+
+  /* FOOTER */
+  .footer{
+    padding:24px 0 34px;
+    border-top:1px solid var(--border);
+    color:var(--muted);
     text-align:center;
   }
-  .brand-text{
-    display:none;
+
+  .ltr{
+    direction:ltr;
+    unicode-bidi:embed;
+  }
+  /* ===== Agencies Section ===== */
+  .agencies-grid{
+    display:grid;
+    grid-template-columns:repeat(2, 1fr);
+    gap:14px;
   }
 
-  .brand > div{ line-height:1.2; }
-}
+  @media (max-width: 900px){
+    .agencies-grid{ grid-template-columns:1fr; }
+  }
 
-@media (prefers-reduced-motion: reduce){
-  .menu{ transition:none !important; }
-  .icon-btn{ transition:none !important; }
-} 
+  .agency-card{
+    background:var(--card);
+    border:1px solid var(--border);
+    border-radius:var(--radius);
+    padding:18px;
+    box-shadow:var(--shadow);
+    text-align:center;
+  }
 
+  .agency-logo{
+    height:140px;
+    border-radius:16px;
+    border:1px solid var(--border);
+    background:rgba(255,255,255,.75);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    overflow:hidden;
+  }
 
-/* ===================== */
-/* HERO (داكن + لمسة ذهبية) */
-/* ===================== */
-.hero{
-  width:100vw;
-  min-height:100vh;
-}
-.hero-slider{
-  position:relative;
-  width:100%;
-  height:100vh;
-  overflow:hidden;
-  padding:0 !important;
-  border:0;
+  .agency-logo img{
+    width:100%;
+    height:100%;
+    object-fit:contain;  /* يحافظ على شكل الشعار */
+    padding:14px;
+  }
 
-  /* بديل جميل لو ما في صور */
-  background:
-    radial-gradient(900px 600px at 70% 10%, rgba(213,184,134,.18), transparent 55%),
-    radial-gradient(900px 600px at 20% 70%, rgba(184,138,75,.14), transparent 55%),
-    #070c16;
-}
-.slides,.slide,.overlay{
-  position:absolute;
-  inset:0;
-  width:100%;
-  height:100%;
-}
-.slide{
-  background-size:cover;
-  background-position:center;
-  opacity:0;
-  transform:scale(1.06);
-  transition:opacity 1s ease, transform 8s ease;
-}
-.slide.active{
-  opacity:1;
-  transform:scale(1);
-}
+  .agency-name{
+    margin:12px 0 0;
+    font-size:18px;
+  }
 
-/* Overlay الداكن مع تدرج ذهبي خفيف */
-.overlay{
-  background: linear-gradient(to left,
-    rgba(7,12,22,.88) 18%,
-    rgba(7,12,22,.60) 55%,
-    rgba(213,184,134,.12) 100%
-  );
-}
-
-/* HERO CONTENT */
-.hero-content{
-  position:relative;
-  height:100%;
-  display:flex;
-  flex-direction:column;
-  justify-content:center;
-  align-items:center;
-  text-align:center;
-  padding:60px 18px;
-  max-width:900px;
-  margin:auto;
-  color:#eef3ff;
-}
-
-/* اسم الشركة */
-.company-name{
-  font-size:44px;
-  font-weight:900;
-  margin:0 0 8px;
-  color:var(--brand);
-  text-shadow:0 10px 30px rgba(0,0,0,.35);
-}
-@media (max-width:520px){
-  .company-name{font-size:34px}
-}
-
-.badge{
-  display:flex;
-  flex-wrap:wrap;
-  justify-content:center;
-  gap:10px;
-  padding:10px 14px;
-  border-radius:999px;
-  background:rgba(213,184,134,.12);
-  border:1px solid rgba(213,184,134,.22);
-  color:#f3f4f6;
-  font-weight:800;
-  font-size:14px;
-  margin-bottom:10px;
-}
-
-.hero-content h1{
-  margin:6px 0 0;
-  font-size:38px;
-  line-height:1.2;
-}
-@media (max-width:520px){
-  .hero-content h1{font-size:30px}
-}
-
-.lead{
-  color:#dbe3f7;
-  margin:10px 0 14px;
-}
-.actions{
-  display:flex;
-  gap:12px;
-  flex-wrap:wrap;
-  justify-content:center;
-}
-
-/* ===================== */
-/* SECTIONS */
-/* ===================== */
-section{padding:32px 0}
-.section-title{
-  display:flex;
-  justify-content:space-between;
-  align-items:flex-end;
-  margin-bottom:16px;
-}
-.section-title h2{margin:0}
-.section-title p{margin:0;color:var(--muted)}
-
-.grid-3{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:14px;
-}
-@media(max-width:900px){
-  .grid-3{grid-template-columns:1fr}
-}
-
-/* CARDS */
-.card{
-  background:var(--card);
-  border:1px solid var(--border);
-  border-radius:var(--radius);
-  padding:22px;
-  box-shadow:var(--shadow);
-}
-.lift{transition:.22s}
-.lift:hover{transform:translateY(-6px)}
-
-.icon{
-  width:46px;height:46px;
-  border-radius:14px;
-  display:grid;
-  place-items:center;
-  background:rgba(213,184,134,.14);
-  border:1px solid rgba(213,184,134,.22);
-  font-size:22px;
-  margin-bottom:10px;
-}
-.small{color:var(--muted)}
-
-.thumb{
-  height:150px;
-  border-radius:16px;
-  border:1px solid var(--border);
-  margin-bottom:12px;
-  background-size:cover;
-  background-position:center;
-}
-
-/* CONTACT */
-.contact-grid{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:14px;
-}
-@media(max-width:900px){
-  .contact-grid{grid-template-columns:1fr}
-}
-
-.field{
-  display:flex;
-  justify-content:space-between;
-  padding:12px 14px;
-  border:1px solid var(--border);
-  border-radius:14px;
-  background:rgba(213,184,134,.10);
-  color:var(--muted);
-}
-.field strong{color:var(--text)}
-
-iframe{
-  width:100%;
-  height:320px;
-  border-radius:16px;
-  border:1px solid var(--border);
-}
-
-/* FOOTER */
-.footer{
-  padding:24px 0 34px;
-  border-top:1px solid var(--border);
-  color:var(--muted);
-  text-align:center;
-}
-
-.ltr{
-  direction:ltr;
-  unicode-bidi:embed;
-}
-/* ===== Agencies Section ===== */
-.agencies-grid{
-  display:grid;
-  grid-template-columns:repeat(2, 1fr);
-  gap:14px;
-}
-
-@media (max-width: 900px){
-  .agencies-grid{ grid-template-columns:1fr; }
-}
-
-.agency-card{
-  background:var(--card);
-  border:1px solid var(--border);
-  border-radius:var(--radius);
-  padding:18px;
-  box-shadow:var(--shadow);
-  text-align:center;
-}
-
-.agency-logo{
-  height:140px;
-  border-radius:16px;
-  border:1px solid var(--border);
-  background:rgba(255,255,255,.75);
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  overflow:hidden;
-}
-
-.agency-logo img{
-  width:100%;
-  height:100%;
-  object-fit:contain;  /* يحافظ على شكل الشعار */
-  padding:14px;
-}
-
-.agency-name{
-  margin:12px 0 0;
-  font-size:18px;
-}
-
-</style>
+  </style>
  
 </head>
 <body>
   <div class="bg-orb orb1"></div>
   <div class="bg-orb orb2"></div>
 
- <!-- NAV -->
-<header class="nav">
-  <div class=" nav-inner">
+  <!-- NAV -->
+  <header class="nav">
+    <div class=" nav-inner">
 
-    <!-- (موبايل) زر اتصال -->
-    <div class="nav-actions">
-      <a class="icon-btn" href="tel:+218913688853" aria-label="اتصال مباشر">
-        <svg viewBox="0 0 24 24" aria-hidden="true">
-          <path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.3 1.7.6 2.5a2 2 0 0 1-.4 2.1L8.2 9.8a16 16 0 0 0 6 6l1.5-1.1a2 2 0 0 1 2.1-.4c.8.3 1.6.5 2.5.6A2 2 0 0 1 22 16.9z"/>
-        </svg>
-      </a>
-    </div>
-
-    <!-- Brand -->
-    <a class="brand" href="#top" aria-label="الرئيسية">
-      <div class="logo">
-        <img src="photo/logoo-removebg-preview.png" alt="شعار شركة النواة الجديدة">
-      </div>
-      <div class="brand-text">
-        شركة <span style="color:var(--brand)">النواة الجديدة</span><br/>
-        <span style="color:var(--muted); font-size:13px">استيراد وتوريد مواد غذائية</span>
-      </div>
-    </a>
-
-    <!-- Menu -->
-    <nav class="menu" id="mainMenu" aria-label="القائمة">
-      <a href="#services">الخدمات</a>
-      <a href="#inventory">مواد غذائية / مخزون</a>
-      <a href="#about">من نحن</a>
-      <a href="#whyus">لماذا نحن</a>
-      <a href="#contact">تواصل معنا</a>
-    </nav>
-
-    <!-- (موبايل) زر فتح القائمة -->
-    <div class="nav-actions">
-      <button
-        class="icon-btn"
-        id="menuToggle"
-        type="button"
-        aria-label="فتح القائمة"
-        aria-expanded="false"
-        aria-controls="mainMenu">
-        <svg viewBox="0 0 24 24" aria-hidden="true">
-          <path d="M4 6h16M4 12h16M4 18h16"/>
-        </svg>
-      </button>
-    </div>
-
-  </div>
-</header>
-
- <!-- HERO -->
-<main id="top" class="hero">
-  <div class="hero-grid">
-
-    <!-- Slider -->
-    <div class="card hero-slider lift" data-aos="fade-up">
-      <div class="slides">
-        <div class="slide active" style="background-image:url('photo/3.jpg')"></div>
-        <div class="slide" style="background-image:url('photo/4.jpg')"></div>
-        <div class="slide" style="background-image:url('photo/1.jpg')"></div>
-        <div class="overlay"></div>
+      <!-- (موبايل) زر اتصال -->
+      <div class="nav-actions">
+        <a class="icon-btn" href="tel:+218913688853" aria-label="اتصال مباشر">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.3 1.7.6 2.5a2 2 0 0 1-.4 2.1L8.2 9.8a16 16 0 0 0 6 6l1.5-1.1a2 2 0 0 1 2.1-.4c.8.3 1.6.5 2.5.6A2 2 0 0 1 22 16.9z"/>
+          </svg>
+        </a>
       </div>
 
-      <div class="hero-content">
-        <div class="company-name">شركة النواة الجديدة</div>
-
-        <div class="badge">✅ جودة موثوقة • ✅ التزام بالمواعيد • ✅ موردون معتمدون</div>
-
-        <h1>استيراد وتوريد مواد غذائية بجودة عالية</h1>
-
-        <p class="lead">
-          مقرنا <b>حي الأندلس</b>، نوفّر منتجات غذائية مختارة بعناية لتلبية احتياجات السوق المحلي مع الالتزام بمعايير السلامة.
-        </p>
-
-        <div class="actions">
-          <a class="btn primary" href="#contact">تواصل معنا</a>
-          <a class="btn" href="#services">استعرض الخدمات</a>
+      <!-- Brand -->
+      <a class="brand" href="#top" aria-label="الرئيسية">
+        <div class="logo">
+          <img src="photo/logoo-removebg-preview.png" alt="شعار شركة النواة الجديدة">
         </div>
-      </div>
-    </div>  <!-- ✅ هذا لازم يكون موجود لإغلاق .card hero-slider -->
+        <div class="brand-text">
+          شركة <span style="color:var(--brand)">النواة الجديدة</span><br/>
+          <span style="color:var(--muted); font-size:13px">استيراد وتوريد مواد غذائية</span>
+        </div>
+      </a>
 
-  </div>
-</main>
+      <!-- Menu -->
+      <nav class="menu" id="mainMenu" aria-label="القائمة">
+        <a href="#services">الخدمات</a>
+        <a href="#inventory">مواد غذائية / مخزون</a>
+        <a href="#about">من نحن</a>
+        <a href="#whyus">لماذا نحن</a>
+        <a href="#contact">تواصل معنا</a>
+      </nav>
+
+      <!-- (موبايل) زر فتح القائمة -->
+      <div class="nav-actions">
+        <button
+          class="icon-btn"
+          id="menuToggle"
+          type="button"
+          aria-label="فتح القائمة"
+          aria-expanded="false"
+          aria-controls="mainMenu">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M4 6h16M4 12h16M4 18h16"/>
+          </svg>
+        </button>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <main id="top" class="hero">
+    <div class="hero-grid">
+
+      <!-- Slider -->
+      <div class="card hero-slider lift" data-aos="fade-up">
+        <div class="slides">
+          <div class="slide active" style="background-image:url('photo/3.jpg')"></div>
+          <div class="slide" style="background-image:url('photo/4.jpg')"></div>
+          <div class="slide" style="background-image:url('photo/1.jpg')"></div>
+          <div class="overlay"></div>
+        </div>
+
+        <div class="hero-content">
+          <div class="company-name">شركة النواة الجديدة</div>
+
+          <div class="badge">✅ جودة موثوقة • ✅ التزام بالمواعيد • ✅ موردون معتمدون</div>
+
+          <h1>استيراد وتوريد مواد غذائية بجودة عالية</h1>
+
+          <p class="lead">
+            مقرنا <b>حي الأندلس</b>، نوفّر منتجات غذائية مختارة بعناية لتلبية احتياجات السوق المحلي مع الالتزام بمعايير السلامة.
+          </p>
+
+          <div class="actions">
+            <a class="btn primary" href="#contact">تواصل معنا</a>
+            <a class="btn" href="#services">استعرض الخدمات</a>
+          </div>
+        </div>
+      </div>  <!-- ✅ هذا لازم يكون موجود لإغلاق .card hero-slider -->
+
+    </div>
+  </main>
 
 
   <!-- SERVICES -->
@@ -640,31 +641,31 @@ iframe{
     </div>
   </section>
 
-<section id="agencies">
-  <div class="wrap">
-    <div class="section-title">
-      <h2>وكالاتنا</h2> 
-    </div>
-
-    <div class="agencies-grid">
-      <!-- Agency 1 -->
-      <div class="agency-card lift">
-        <div class="agency-logo">
-          <img src="photo/w1.jpg" alt="NICKY'S Professional">
-        </div>
-        <h3 class="agency-name">NICKY'S Professional</h3>
+  <section id="agencies">
+    <div class="wrap">
+      <div class="section-title">
+        <h2>وكالاتنا</h2> 
       </div>
 
-      <!-- Agency 2 -->
-      <div class="agency-card lift">
-        <div class="agency-logo">
-          <img src="photo/w2.jpg" alt="Aromio">
+      <div class="agencies-grid">
+        <!-- Agency 1 -->
+        <div class="agency-card lift">
+          <div class="agency-logo">
+            <img src="photo/w1.jpg" alt="NICKY'S Professional">
+          </div>
+          <h3 class="agency-name">NICKY'S Professional</h3>
         </div>
-        <h3 class="agency-name">Aromio</h3>
+
+        <!-- Agency 2 -->
+        <div class="agency-card lift">
+          <div class="agency-logo">
+            <img src="photo/w2.jpg" alt="Aromio">
+          </div>
+          <h3 class="agency-name">Aromio</h3>
+        </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
 
   <!-- WHY US -->
