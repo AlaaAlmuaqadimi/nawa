@@ -1,9 +1,6 @@
  
 document.addEventListener('DOMContentLoaded', () => {
-
-  /* =========================
-     A) MOBILE NAV MENU
-  ========================== */
+ 
   const btn  = document.getElementById('menuToggle');
   const menu = document.getElementById('mainMenu');
 
@@ -19,30 +16,24 @@ document.addEventListener('DOMContentLoaded', () => {
     };
 
     btn.addEventListener('click', (e) => {
-      e.stopPropagation();  // مهم: حتى ما يعتبره "ضغط خارج" ويقفل مباشرة
+      e.stopPropagation();   
       toggleMenu();
     });
-
-    // يقفل المنيو لما تضغط على أي رابط
+ 
     menu.querySelectorAll('a[href^="#"]').forEach(a => {
       a.addEventListener('click', closeMenu);
     });
-
-    // يقفل المنيو لو المستخدم ضغط خارجها
+ 
     document.addEventListener('click', (e) => {
       const clickedInside = menu.contains(e.target) || btn.contains(e.target);
       if (!clickedInside) closeMenu();
     });
-
-    // يقفلها عند تغيير حجم الشاشة للديسكتوب
+ 
     window.addEventListener('resize', () => {
       if (window.innerWidth > 900) closeMenu();
     });
-  }
+  } 
 
-  /* =========================
-     1) HERO SLIDER
-  ========================== */
   (function heroSlider(){
     const slides = document.querySelectorAll('.slide');
     if (!slides.length) return;
@@ -56,10 +47,7 @@ document.addEventListener('DOMContentLoaded', () => {
       slides[idx].classList.add('active');
     }, interval);
   })();
-
-  /* =========================
-     2) SECTION ANIMATIONS (Auto)
-  ========================== */
+ 
   const sectionAnims = [
     { section: 'fade-up',    item: 'zoom-in' },
     { section: 'fade-right', item: 'fade-up' },
@@ -102,10 +90,7 @@ document.addEventListener('DOMContentLoaded', () => {
       el.dataset.aosOnce = 'true';
     });
   });
-
-  /* =========================
-     3) SMOOTH SCROLL
-  ========================== */
+ 
   document.querySelectorAll('a[href^="#"]').forEach(a => {
     a.addEventListener('click', (e) => {
       const id = a.getAttribute('href');
@@ -118,10 +103,7 @@ document.addEventListener('DOMContentLoaded', () => {
       target.scrollIntoView({ behavior: 'smooth', block: 'start' });
     });
   });
-
-  /* =========================
-     4) AOS INIT (Once)
-  ========================== */
+ 
   AOS.init({
     once: true,
     duration: 800,

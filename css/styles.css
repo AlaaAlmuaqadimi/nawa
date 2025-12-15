@@ -1,16 +1,13 @@
  
-  :root{
-    /* =======================
-      لوحة ألوان مستوحاة من اللوقو (ذهبي/بيج)
-      ======================= */
-    --brand:#d5b886;        /* اللون الأساسي (تقريباً من اللوقو) */
-    --brand2:#b88a4b;       /* درجة أغمق للجراديانت */
-    --brand3:#8b6a3b;       /* أغمق (للنصوص/التأكيد) */
-    --brand-soft:#f3eadb;   /* فاتح جداً للخلفيات */
+  :root{ 
+    --brand:#d5b886;        
+    --brand2:#b88a4b;       
+    --brand3:#8b6a3b;       
+    --brand-soft:#f3eadb;  
 
     /* الخلفيات */
-    --bg:#fbf8f2;                    /* خلفية دافئة فاتحة */
-    --card:rgba(255,255,255,.94);    /* الكروت */
+    --bg:#fbf8f2;                    
+    --card:rgba(255,255,255,.94);     
 
     /* النصوص */
     --text:#121826;
@@ -219,8 +216,7 @@
     overflow:hidden;
     padding:0 !important;
     border:0;
-
-    /* بديل جميل لو ما في صور */
+ 
     background:
       radial-gradient(900px 600px at 70% 10%, rgba(213,184,134,.18), transparent 55%),
       radial-gradient(900px 600px at 20% 70%, rgba(184,138,75,.14), transparent 55%),
@@ -243,8 +239,7 @@
     opacity:1;
     transform:scale(1);
   }
-
-  /* Overlay الداكن مع تدرج ذهبي خفيف */
+ 
   .overlay{
     background: linear-gradient(to left,
       rgba(7,12,22,.88) 18%,
@@ -267,8 +262,7 @@
     margin:auto;
     color:#eef3ff;
   }
-
-  /* اسم الشركة */
+ 
   .company-name{
     font-size:44px;
     font-weight:900;
@@ -314,10 +308,8 @@
     flex-wrap:wrap;
     justify-content:center;
   }
-
-  /* ===================== */
-  /* SECTIONS */
-  /* ===================== */
+ 
+  /* SECTIONS */ 
   section{padding:32px 0}
   .section-title{
     display:flex;
@@ -443,7 +435,7 @@
   .agency-logo img{
     width:100%;
     height:100%;
-    object-fit:contain;  /* يحافظ على شكل الشعار */
+    object-fit:contain;   
     padding:14px;
   }
 
