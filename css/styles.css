@@ -21,19 +21,30 @@
     --max:1120px;
   }
     
-  *{box-sizing:border-box}
-  html, body{
+*{box-sizing:border-box}
+
+html, body{
   margin:0;
   width:100%;
   overflow-x:hidden;
+  overflow-y:auto;
 }
-  html{scroll-behavior:smooth}
+
+html{scroll-behavior:smooth}
+
+/* Hide scrollbar but keep scrolling */
+html, body{
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+html::-webkit-scrollbar,
+body::-webkit-scrollbar{
+  display: none;
+}
 
   body{
     margin:0;
-    font-family:"Cairo", system-ui, -apple-system, "Segoe UI", Tahoma, Arial, sans-serif;
-
-    /* تدرجات مناسبة للون اللوقو */
+    font-family:"Cairo", system-ui, -apple-system, "Segoe UI", Tahoma, Arial, sans-serif; 
     background:
       radial-gradient(900px 500px at 85% 10%, rgba(213,184,134,.22), transparent 60%),
       radial-gradient(900px 500px at 15% 30%, rgba(184,138,75,.16), transparent 60%),
